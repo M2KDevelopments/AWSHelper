@@ -1,0 +1,58 @@
+{
+    "name": "AWSHelper",
+    "short_name": "AWSHelper",
+    "version": "1.0.0.0",
+    "description": "An AI powered chrome extension that helps you understand and navigate the complexities of using AWS.",
+    "manifest_version": 3,
+    "minimum_chrome_version": "88",
+    "permissions": [
+        "activeTab",
+        "identity",
+        "notifications",
+        "storage",
+        "tabs",
+        "unlimitedStorage"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "logo.png",
+            "32": "logo.png",
+            "48": "logo.png"
+        }
+    },
+    "icons": {
+        "16": "logo.png",
+        "32": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.console.aws.amazon.com/*",
+                "https://*.console.aws.amazon.com/*/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/icons/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "homepage_url": "https://aws.m2kdevelopments.com",
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'"
+    }
+}

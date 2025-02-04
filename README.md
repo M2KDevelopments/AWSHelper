@@ -1,2 +1,2 @@
-# AWSHelper
+# AWS Helper
 An AI powered chrome extension that helps you understand and navigate the complexities of using AWS.
