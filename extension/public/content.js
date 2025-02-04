@@ -1,6 +1,34 @@
 console.log("Running AWSHelper")
 
+async function run() {
 
+    // Get Navigation Bar
+    const nav = document.querySelector('nav');
+
+    // Get Search Bar
+    const inputSearchbar = document.getElementById('awsc-concierge-input') || getElement('search', nav, 'input');
+
+    // Get Services Button
+    const btnService = nav.querySelector('button[title="Services"]');
+
+    // Get Console Shell Button on Navbar
+    const btnConsoleShell = nav.getElementById("awsc-nav-scallop-icon")
+
+    // Side Drawer Button
+    const btnDrawer = document.querySelector('button[aria-label="Open navigation drawer"]') || getElement('awsui_navigation-toggle', null, 'button');
+
+    // SideBar
+    const navDrawwer = document.querySelector('nav[aria-label="Drawer"]');
+    // navDrawwer.getAttribute('hidden') == 'true';
+
+
+    // // Services Popup - when 'Services Button' is clicked.
+    // const servicesPopup = document.getElementById('menu--services') || document.querySelector('data-testid="awsc-nav-service-menu"');
+    // const servicesList = servicesPopup.querySelectorAll('li[data-itemid]');
+    // console.log(servicesList)
+}
+
+run();
 
 /**
  * Look for an element from a text inside an attribute
